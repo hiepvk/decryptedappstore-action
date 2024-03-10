@@ -19,8 +19,7 @@ jobs:
         url:
           - ${{ inputs.appstore_url }}
         path:
-          - App.ipa
-          - ''
+          - 'App.ipa'
     runs-on: ubuntu-latest
     steps:
       - name: Download IPA
@@ -38,4 +37,5 @@ jobs:
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.3.1
         with:
-          path: "*.ipa"
+          name: DecryptApp.ipa
+          path: ${{ github.workspace }}/App.ipa
